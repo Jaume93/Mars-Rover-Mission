@@ -1,0 +1,10 @@
+.buttons{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.btnForward, .btnLeft, .btnRight {
+    width: 100px;
+    height: 50px;
+}
