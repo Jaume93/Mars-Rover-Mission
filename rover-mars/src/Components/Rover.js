@@ -14,62 +14,58 @@ export const Rover = () => {
         obstacle2: { x: 1, y: 1 },
     }
 
-
     const obstacleDetector = () => {
-
-        console.log(currentPosition);
-        if (currentPosition == obstacles.obstacle1 || obstacles.obstacle2) {
+        if (currentPosition.x && currentPosition.y == obstacles.obstacle1.x && obstacles.obstacle1.y || currentPosition.x && currentPosition.y == obstacles.obstacle2.x && obstacles.obstacle2.y) {
             console.log('Obstacle in front');
             statusObstacle = true
         }
         if (statusObstacle == true) {
-
+            return currentPosition, console.log('x:', currentPosition.x, 'y:', currentPosition.y, facing, 'obstacle :', statusObstacle);
+        } else if (statusObstacle == false) {
+            if (facing == 'North') {
+                if (y == 200) {
+                    console.log('moving rover to an invalid position');
+                    return
+                }
+                else {
+                    setY(y + 1)
+                    setFacing('North')
+                }
+            } else if (facing == 'East') {
+                if (x == 200) {
+                    console.log('moving rover to an invalid position');
+                    return
+                }
+                else {
+                    setX(x + 1)
+                    setFacing('East')
+                }
+            } else if (facing == 'West') {
+                if (x == 0) {
+                    console.log('moving rover to an invalid position');
+                    return
+                }
+                else {
+                    setX(x - 1)
+                    setFacing('West')
+                }
+            } else if (facing == 'South') {
+                if (y == 0) {
+                    console.log('moving rover to an invalid position');
+                    return
+                }
+                else {
+                    setY(y - 1)
+                    setFacing('South')
+                }
+            }
+            else {
+                console.log('moving rover to an invalid position');
+            }
         }
     }
-    console.log(statusObstacle);
-
     const goForward = () => {
         obstacleDetector()
-        if (facing == 'North') {
-            if (y == 200) {
-                console.log('moving rover to an invalid position');
-                return
-            }
-            else {
-                setY(y + 1)
-                setFacing('North')
-            }
-        } else if (facing == 'East') {
-            if (x == 200) {
-                console.log('moving rover to an invalid position');
-                return
-            }
-            else {
-                setX(x + 1)
-                setFacing('East')
-            }
-        } else if (facing == 'West') {
-            if (x == 0) {
-                console.log('moving rover to an invalid position');
-                return
-            }
-            else {
-                setX(x - 1)
-                setFacing('West')
-            }
-        } else if (facing == 'South') {
-            if (y == 0) {
-                console.log('moving rover to an invalid position');
-                return
-            }
-            else {
-                setY(y - 1)
-                setFacing('South')
-            }
-        }
-        else {
-            console.log('moving rover to an invalid position');
-        }
     }
 
     const rotateRight = () => {
@@ -115,7 +111,6 @@ export const Rover = () => {
             console.log('moving rover to an invalid position');
         }
     }
-
     console.log('x:', currentPosition.x, 'y:', currentPosition.y, facing, 'obstacle :', statusObstacle);
 
     return (

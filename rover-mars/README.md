@@ -1,4 +1,6 @@
-# Rover Mars Mission v0.1
+# Rover Mars Mission Challenge v0.1
+
+## Introduction
 
 You’re part of the team that explores Mars by sending remotely controlled vehicles to the surface
 of the planet. Develop a software that translates the commands sent from earth to instructions
@@ -15,6 +17,12 @@ it is facing.
 - Implement obstacle detection before each move to a new square. If a given
 sequence of commands encounters an obstacle, the rover moves up to the last
 possible point, aborts the sequence and reports the obstacle.
+
+## Solution
+
+I defined the `current location` of the rover with **x** and **y** axis in order to know its position in the map. Then I defined where the rover is facing (North, South, East or West). Moreover, rover has a `status obstacle` to know if there is an obstacle infront of it.
+
+Moving through the map it is possible to the rover by giving orders on clicking to the buttons `Forward`, `Right` and `Left`. Moving forward simply means that the rover is moving x or y axial depending where it is facing and if there are no obstacles infront of him. By clicking right or left, the rover rotates his cardinal point.
 
 ## TODO
 - Create obstacle detecion function 
