@@ -8,3 +8,27 @@
     width: 100px;
     height: 50px;
 }
+
+.planet {
+    background-color: grey;
+    border: 1px solid;
+    width: 200px;
+    height: 200px;
+    position: relative;
+}
+
+
+.rover {
+    background-color: green;
+    position: absolute;
+    width: 2px;
+    height: 2px;
+}
+
+
+.obstacle {
+    background-color: red;
+    position: absolute;
+    width: 2px;
+    height: 2px;
+}

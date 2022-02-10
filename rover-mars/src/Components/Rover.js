@@ -1,71 +1,21 @@
 import React, { useState } from 'react';
+import { planet, obstacles } from '../config';
+import { getNextPosition } from './move';
 import './Rover.css';
+import './move'
 
 export const Rover = () => {
-
-    let [x, setX] = useState(0);
-    let [y, setY] = useState(0);
-    let currentPosition = { x, y }
-    let statusObstacle = false;
+    const [x, setX] = useState(planet.width / 2);
+    const [y, setY] = useState(planet.height / 2);
     const [facing, setFacing] = useState('North');
 
-    const obstacles = {
-        obstacle1: { x: 1, y: 0 },
-        obstacle2: { x: 1, y: 1 },
-    }
-
-    const obstacleDetector = () => {
-        if (currentPosition.x && currentPosition.y == obstacles.obstacle1.x && obstacles.obstacle1.y || currentPosition.x && currentPosition.y == obstacles.obstacle2.x && obstacles.obstacle2.y) {
-            console.log('Obstacle in front');
-            statusObstacle = true
-        }
-        if (statusObstacle == true) {
-            return currentPosition, console.log('x:', currentPosition.x, 'y:', currentPosition.y, facing, 'obstacle :', statusObstacle);
-        } else if (statusObstacle == false) {
-            if (facing == 'North') {
-                if (y == 200) {
-                    console.log('moving rover to an invalid position');
-                    return
-                }
-                else {
-                    setY(y + 1)
-                    setFacing('North')
-                }
-            } else if (facing == 'East') {
-                if (x == 200) {
-                    console.log('moving rover to an invalid position');
-                    return
-                }
-                else {
-                    setX(x + 1)
-                    setFacing('East')
-                }
-            } else if (facing == 'West') {
-                if (x == 0) {
-                    console.log('moving rover to an invalid position');
-                    return
-                }
-                else {
-                    setX(x - 1)
-                    setFacing('West')
-                }
-            } else if (facing == 'South') {
-                if (y == 0) {
-                    console.log('moving rover to an invalid position');
-                    return
-                }
-                else {
-                    setY(y - 1)
-                    setFacing('South')
-                }
-            }
-            else {
-                console.log('moving rover to an invalid position');
-            }
-        }
-    }
     const goForward = () => {
-        obstacleDetector()
+        const { x: newX, y: newY, collision } = getNextPosition(x, y, obstacles, planet, facing);
+        if (collision) return console.log('Collision detected!!');
+
+        console.log(x, y, collision);
+        setX(newX);
+        setY(newY);
     }
 
     const rotateRight = () => {
@@ -75,7 +25,7 @@ export const Rover = () => {
 
         } else if (facing == 'East') {
             setFacing('South')
-            console.log('Rover rotating to South');
+            console.log('Rover rotating to {facing}');
 
         } else if (facing == 'West') {
             setFacing('North')
@@ -111,17 +61,20 @@ export const Rover = () => {
             console.log('moving rover to an invalid position');
         }
     }
-    console.log('x:', currentPosition.x, 'y:', currentPosition.y, facing, 'obstacle :', statusObstacle);
 
     return (
         <div className='container'>
             <h3>Instructions</h3>
             <div className='buttons'>
                 <button onClick={rotateLeft} className='btnLeft'> Left </button>
-
                 <button onClick={goForward} className='btnForward'> Forward </button>
-
                 <button onClick={rotateRight} className='btnRight'> Right </button>
+            </div>
+            <div className="planet">
+                <div className="rover" style={{ top: y, left: x }}></div>
+                {obstacles.map(({ x, y }) => (
+                    <div className="obstacle" style={{ top: y, left: x }}></div>
+                ))}
             </div>
         </div>
     )
