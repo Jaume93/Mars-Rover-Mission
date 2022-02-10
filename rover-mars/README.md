@@ -24,10 +24,11 @@ I defined the `current location` of the rover with **x** and **y** axis in order
 
 Moving through the map it is possible to the rover by giving orders on clicking to the buttons `Forward`, `Right` and `Left`. Moving forward simply means that the rover is moving x or y axial depending where it is facing and if there are no obstacles infront of him. By clicking right or left, the rover rotates his cardinal point.
 
+All in all, the rover is capable to move arround the map by receiving instructions from the buttons and if his obstacle detector work correctly by sending information to him if there is and obstacle in front so that prevents to be crushed.
+
 ## TODO
-- Create obstacle detecion function 
-- Create style
-- Refactor
+- Create some style
+- Code refactoring
 
 ## Available Scripts
 
