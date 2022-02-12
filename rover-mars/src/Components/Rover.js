@@ -28,7 +28,9 @@ export const Rover = () => {
     }
     return (
         <div className='container'>
-            <h1>Rover Mars Mission</h1>
+            <div className='title'>
+                <h1 >Rover Mars Mission</h1>
+            </div>
             <div className='planetContainer'>
                 <div className="planet">
                     <div className="rover" style={{ top: y, left: x }}></div>
@@ -37,7 +39,7 @@ export const Rover = () => {
                     ))}
                 </div>
             </div>
-            <h3>Instructions</h3>
+            <h3 className='title'>Instructions</h3>
             <div className='buttons'>
                 <button onClick={isRotatingToLeft} className='btnLeft'> Left </button>
                 <button onClick={goForward} className='btnForward'> Forward </button>
