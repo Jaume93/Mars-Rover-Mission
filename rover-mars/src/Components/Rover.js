@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { planet, obstacles } from '../config';
 import { getNextPosition } from './move';
+import { rotateLeft, rotateRight } from './rotate';
 import './Rover.css';
 import './move'
 
@@ -8,6 +9,7 @@ export const Rover = () => {
     const [x, setX] = useState(planet.width / 2);
     const [y, setY] = useState(planet.height / 2);
     const [facing, setFacing] = useState('North');
+    let newFacing
 
     const goForward = () => {
         const { x: newX, y: newY, collision } = getNextPosition(x, y, obstacles, planet, facing);
@@ -17,51 +19,13 @@ export const Rover = () => {
         setX(newX);
         setY(newY);
     }
+    const isRotatingToRight = () => {
+        rotateRight(facing, setFacing, newFacing)
 
-    const rotateRight = () => {
-        if (facing == 'North') {
-            setFacing('East')
-            console.log('Rover rotating to East');
-
-        } else if (facing == 'East') {
-            setFacing('South')
-            console.log('Rover rotating to South');
-
-        }
-        else if (facing == 'West') {
-            setFacing('North')
-            console.log('Rover rotating to Nort');
-
-        } else if (facing == 'South') {
-            setFacing('West')
-            console.log('Rover rotating to West');
-
-        } else {
-            console.log('moving rover to an invalid position');
-        }
     }
-
-    const rotateLeft = () => {
-        if (facing == 'North') {
-            setFacing('West')
-            console.log('Rover rotating to West');
-        } else if (facing == 'East') {
-            setFacing('North')
-            console.log('Rover rotating to Nort');
-
-        } else if (facing == 'West') {
-            setFacing('South')
-            console.log('Rover rotating to South');
-
-        } else if (facing == 'South') {
-            setFacing('East')
-            console.log('Rover rotating to East');
-        }
-        else {
-            console.log('moving rover to an invalid position');
-        }
+    const isRotatingToLeft = () => {
+        rotateLeft(facing, setFacing, newFacing)
     }
-
     return (
         <div className='container'>
             <div className='planetContainer'>
@@ -74,9 +38,9 @@ export const Rover = () => {
             </div>
             <h3>Instructions</h3>
             <div className='buttons'>
-                <button onClick={rotateLeft} className='btnLeft'> Left </button>
+                <button onClick={isRotatingToLeft} className='btnLeft'> Left </button>
                 <button onClick={goForward} className='btnForward'> Forward </button>
-                <button onClick={rotateRight} className='btnRight'> Right </button>
+                <button onClick={isRotatingToRight} className='btnRight'> Right </button>
             </div>
         </div>
     )

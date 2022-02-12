@@ -5,12 +5,18 @@
 .buttons{
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: center;
 }
 
 .btnForward, .btnLeft, .btnRight {
-    width: 100px;
-    height: 50px;
+    width: 80px;
+    height: 45px;
+    margin: 0px 50px;
+    border-radius: 10%;
+    border-style: none;
+    box-shadow: 2.5px 5px black;
+    color: rgb(218, 206, 100);
+    background-color: blueviolet;
 }
 
 .planetContainer{
@@ -21,7 +27,7 @@
 }
 
 .planet {
-    background-color: grey;
+    background-color: rgb(169, 218, 238);
     border: 1px solid;
     width: 400px;
     height: 400px;
@@ -30,7 +36,7 @@
 
 
 .rover {
-    background-color: green;
+    background-color: rgb(22, 170, 22);
     position: absolute;
     width: 3px;
     height: 3px;

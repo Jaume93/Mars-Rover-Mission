@@ -1,5 +1,5 @@
 export const obstacles = [
-    { x: Math.random() * 200, y: Math.random() * 400 },
+    { x: 200, y: 205 },
     { x: Math.random() * 400, y: Math.random() * 400 },
     { x: Math.random() * 400, y: Math.random() * 400 },
     { x: Math.random() * 400, y: Math.random() * 400 },
