@@ -28,6 +28,7 @@ export const Rover = () => {
     }
     return (
         <div className='container'>
+            <h1>Rover Mars Mission</h1>
             <div className='planetContainer'>
                 <div className="planet">
                     <div className="rover" style={{ top: y, left: x }}></div>
