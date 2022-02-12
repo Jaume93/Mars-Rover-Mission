@@ -25,9 +25,10 @@ export const Rover = () => {
 
         } else if (facing == 'East') {
             setFacing('South')
-            console.log('Rover rotating to {facing}');
+            console.log('Rover rotating to South');
 
-        } else if (facing == 'West') {
+        }
+        else if (facing == 'West') {
             setFacing('North')
             console.log('Rover rotating to Nort');
 
@@ -39,7 +40,6 @@ export const Rover = () => {
             console.log('moving rover to an invalid position');
         }
     }
-
 
     const rotateLeft = () => {
         if (facing == 'North') {
@@ -64,17 +64,19 @@ export const Rover = () => {
 
     return (
         <div className='container'>
+            <div className='planetContainer'>
+                <div className="planet">
+                    <div className="rover" style={{ top: y, left: x }}></div>
+                    {obstacles.map(({ x, y }) => (
+                        <div className="obstacle" style={{ top: y, left: x }}></div>
+                    ))}
+                </div>
+            </div>
             <h3>Instructions</h3>
             <div className='buttons'>
                 <button onClick={rotateLeft} className='btnLeft'> Left </button>
                 <button onClick={goForward} className='btnForward'> Forward </button>
                 <button onClick={rotateRight} className='btnRight'> Right </button>
-            </div>
-            <div className="planet">
-                <div className="rover" style={{ top: y, left: x }}></div>
-                {obstacles.map(({ x, y }) => (
-                    <div className="obstacle" style={{ top: y, left: x }}></div>
-                ))}
             </div>
         </div>
     )

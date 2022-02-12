@@ -1,10 +1,18 @@
 export const obstacles = [
-    { x: 80, y: 100 },
-    { x: 50, y: 150 },
-    { x: 105, y: 100 }
+    { x: Math.random() * 200, y: Math.random() * 400 },
+    { x: Math.random() * 400, y: Math.random() * 400 },
+    { x: Math.random() * 400, y: Math.random() * 400 },
+    { x: Math.random() * 400, y: Math.random() * 400 },
+    { x: Math.random() * 400, y: Math.random() * 400 },
+    { x: Math.random() * 400, y: Math.random() * 400 },
+    { x: Math.random() * 400, y: Math.random() * 400 },
+    { x: Math.random() * 400, y: Math.random() * 400 },
+    { x: Math.random() * 400, y: Math.random() * 400 },
+    { x: Math.random() * 400, y: Math.random() * 400 },
+    { x: Math.random() * 400, y: Math.random() * 400 }
 ];
 
 export const planet = {
-    width: 200,
-    height: 200,
+    width: 400,
+    height: 400,
 }

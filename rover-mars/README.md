@@ -1,4 +1,4 @@
-# Rover Mars Mission Challenge v0.1
+# Rover Mars Mission Challenge v0.2
 
 ## Introduction
 
@@ -27,10 +27,6 @@ Moving through the map it is possible to the rover by giving orders on clicking 
 
 All in all, the rover is capable to move arround the map by receiving instructions from the buttons and if his obstacle detector work correctly by sending information to him if there is and obstacle in front so that prevents to be crushed.
 
-## TODO
-- Improve style
-- Code refactoring
-
 ## Available Scripts
 
 In the project directory, you can run:
@@ -42,3 +38,12 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
+
+## V 0.2
+
+- added some style.
+- obstacles now appears in random positions.
+
+## TODO
+- Improve style
+- Code refactoring

@@ -1,3 +1,7 @@
+.container{
+    min-height: 100vh;
+    background-color: #273042;}
+
 .buttons{
     display: flex;
     align-items: center;
@@ -9,11 +13,18 @@
     height: 50px;
 }
 
+.planetContainer{
+    padding-top: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .planet {
     background-color: grey;
     border: 1px solid;
-    width: 200px;
-    height: 200px;
+    width: 400px;
+    height: 400px;
     position: relative;
 }
 
@@ -21,14 +32,14 @@
 .rover {
     background-color: green;
     position: absolute;
-    width: 2px;
-    height: 2px;
+    width: 3px;
+    height: 3px;
 }
 
 
 .obstacle {
     background-color: red;
     position: absolute;
-    width: 2px;
-    height: 2px;
+    width: 3px;
+    height: 3px;
 }
