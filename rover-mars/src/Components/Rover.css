@@ -1,56 +1,70 @@
-.container{
-    min-height: 100vh;
-    background-color: #273042;
+.container {
+  min-height: 100vh;
+  background-color: #273042;
 }
 
-.title{
-    padding-top: 25px;
-    color: blanchedalmond;
+.title {
+  padding-top: 25px;
+  color: blanchedalmond;
 }
 
-.planetContainer{
-    padding-top: 25px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.planetContainer {
+  padding-top: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .planet {
-    background-color: rgb(169, 218, 238);
-    border: 1px solid;
-    width: 400px;
-    height: 400px;
-    position: relative;
+  background-image: url("/public/planet-background.avif");
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  border: 1px solid;
+  width: 440px;
+  height: 440px;
+  position: relative;
 }
 
 .rover {
-    background-color: rgb(22, 170, 22);
-    position: absolute;
-    width: 3px;
-    height: 3px;
+  background-image: url("/public/rover-image.png");
+  background-size: cover;
+  background-position: center;
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
 }
 
+.rotate-rober {
+  transform: rotate(90deg);
+}
 
 .obstacle {
-    background-color: red;
-    position: absolute;
-    width: 3px;
-    height: 3px;
+  background-image: url("/public/obstacle-image.png");
+  background-size: cover;
+  background-position: center;
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
 }
 
-.buttons{
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.btnForward, .btnLeft, .btnRight {
-    width: 80px;
-    height: 45px;
-    margin: 0px 30px;
-    border-radius: 10%;
-    border-style: none;
-    box-shadow: 2.5px 5px black;
-    color: rgb(218, 206, 100);
-    background-color: blueviolet;
+.btnForward,
+.btnLeft,
+.btnRight {
+  width: 80px;
+  height: 45px;
+  margin: 0px 30px;
+  border-radius: 10%;
+  border-style: none;
+  box-shadow: 2.5px 5px black;
+  color: rgb(218, 206, 100);
+  background-color: blueviolet;
 }

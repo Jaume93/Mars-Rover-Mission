@@ -26,6 +26,21 @@ export const Rover = () => {
     const isRotatingToLeft = () => {
         rotateLeft(facing, setFacing, newFacing)
     }
+    const getRotationAngle = (facing) => {
+        switch (facing) {
+            case 'North':
+                return '0deg';
+            case 'East':
+                return '90deg';
+            case 'South':
+                return '180deg';
+            case 'West':
+                return '-90deg';
+            default:
+                return '0deg';
+        }
+    };
+
     return (
         <div className='container'>
             <div className='title'>
@@ -33,7 +48,7 @@ export const Rover = () => {
             </div>
             <div className='planetContainer'>
                 <div className="planet">
-                    <div className="rover" style={{ top: y, left: x }}></div>
+                    <div className="rover" style={{ top: y, left: x, transform: `rotate(${getRotationAngle(facing)})` }}></div>
                     {obstacles.map(({ x, y }) => (
                         <div className="obstacle" style={{ top: y, left: x }}></div>
                     ))}

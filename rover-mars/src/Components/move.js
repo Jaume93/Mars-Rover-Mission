@@ -17,11 +17,11 @@ export const getNextPosition = (x, y, obstacles, planet, facing) => {
 
     if (planetLimit || hasObstacle) return { x, y, collision: true };
 
-    if (facing == 'North') return { y: y + 1, x };
+    if (facing == 'North') return { y: y - 20, x };
 
-    if (facing == 'East') return { y, x: x + 1 };
+    if (facing == 'East') return { y, x: x + 20 };
 
-    if (facing == 'West') return { y, x: x - 1 };
+    if (facing == 'West') return { y, x: x - 20 };
 
-    if (facing == 'South') return { y: y - 1, x };
+    if (facing == 'South') return { y: y + 20, x };
 }
