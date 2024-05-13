@@ -49,8 +49,8 @@ export const Rover = () => {
             <div className='planetContainer'>
                 <div className="planet">
                     <div className="rover" style={{ top: y, left: x, transform: `rotate(${getRotationAngle(facing)})` }}></div>
-                    {obstacles.map(({ x, y }) => (
-                        <div className="obstacle" style={{ top: y, left: x }}></div>
+                    {obstacles.map(({ x, y }, id) => (
+                        <div key={id} className="obstacle" style={{ top: y, left: x }}></div>
                     ))}
                 </div>
             </div>

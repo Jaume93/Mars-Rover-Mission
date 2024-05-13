@@ -40,7 +40,7 @@ By defalut it will be open [http://localhost:3000](http://localhost:3000) to vie
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
 
-## V 0.3.0
+## V 0.3.1
 
 - Added some style.
 - Obstacles now appears in random positions.
@@ -48,6 +48,7 @@ You may also see any lint errors in the console.
 - Code refactored
 - Improved Readme
 - Changed favicon & title
+- Cleared console warnings
 
 ## TODO
 
