@@ -58,3 +58,5 @@ You may also see any lint errors in the console.
 - Randomize starting position of the rover
 - Extract visible data from console to the page (position, facing, collision).
 - Add compass rose to know the directions
+
+![alt text](./public/preview.png)
